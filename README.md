@@ -22,3 +22,14 @@ Croiser les données satellites avec les données terrain (météo, sols, etc.).
 
 # Landsat
 Projet Landsat + Big Data pour l'Agriculture Intelligente
+Pipeline de traitement (Dataflow simplifié)
+text
+Copier
+Modifier
+[Image Landsat (GeoTIFF)] 
+        ↓ (téléchargement auto ou manuel)
+[Kafka] ← ingestion →
+        ↓
+[Spark] ← traitement NDVI, sélection des bandes, fenêtrage géographique →
+        ↓
+[Export] → [Stockage Parquet] + [Visualisation matplotlib, GeoPandas, etc.]
